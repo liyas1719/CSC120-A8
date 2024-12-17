@@ -1,62 +1,81 @@
 public class Umbrella implements Contract {
 
     public Number size;
-    public int xlocationfeet;
-    public int ylocationfeet;
-    public boolean stillwet;
+    public int xLocationFeet;
+    public int yLocationFeet;
+    public boolean stillWet;
     public boolean open;
 
-    public Umbrella(Number size, int xlocationfeet, int ylocationfeet, boolean stillwet, boolean open) {
+    /**
+     * constructor for  umbrella 
+     * @param size size of the umbrella
+     * @param xLocationFeet location of the umbrella in feet
+     * @param yLocationFeet how high up umbrella is in feet (ground or in hand or in use)
+     * @param stillWet indicates whether or not the umbrella is still wet
+     * @param open indicates whether tor not the umbrella is open
+     */
+    public Umbrella(Number size, int xLocationFeet, int yLocationFeet, boolean stillWet, boolean open) {
         this.size = size;
-        this.xlocationfeet = xlocationfeet;
-        this.ylocationfeet = ylocationfeet;
-        this.stillwet = stillwet;
+        this.xLocationFeet = xLocationFeet;
+        this.yLocationFeet = yLocationFeet;
+        this.stillWet = stillWet;
         this.open = open;
         System.out.println("New umbrella created!");
     }
 
-    // picking up umbrella
-    // lifts up off ground
+    /**
+     * method that picks up umbrella by changing the ylocationfeet
+     * @param item the umbrella being grbbed
+     */
     public void grab(String item) {
-        ylocationfeet = 1;
+        yLocationFeet = 1;
         System.out.println("Umbrella has been picked up");
     }
 
-    // umbrella is dropped
-    // returned to the ground
+    /**
+     * method that drops umbrella by changing the ylocationfeet
+     * @param item the umbrella being dropped
+     */
     public String drop(String item) {
-        ylocationfeet= 0;
+        yLocationFeet= 0;
         System.out.println("Umbrella has been dropped");
         return "Umbrella has been dropped";
     }
 
-    // identifies if umbrella is wet
-    // leaves the umbrella dry
+    /**
+     * method that determines if the umbrella is still wet and dries it
+     * @param item the umbrella being examined
+     */
     public void examine(String item) {
-        if (stillwet == true) {
+        if (stillWet == true) {
             this.rest();
-            stillwet = false;
+            stillWet = false;
             System.out.println("Umbrella is dry");
         } else {
             System.out.println("Umbrella is dry");
         }
     }
 
-    // lifts umbrella upn and opens it
-    // get umbrella wet
+    /**
+     * method that uses umbrella by changing its ylocationfeet, making it grow, and getting it wet
+     * @param item the umbrella being used
+     */
     public void use(String item) {
         this.fly(0, 5);
         this.grow();
-        stillwet = true;
+        stillWet = true;
     }
 
-    // moves umbrella forward or backward by 10 feet
+    /**
+     * method that changes umbrella xLocationFeet to simulate walking movement
+     * @param item the umbrella being dropped
+     */
     public boolean walk(String direction) {
         if (direction == "forward" || direction == "Forward" || direction == "w") {
-            xlocationfeet = xlocationfeet + 10;
+            xLocationFeet = xLocationFeet + 10;
             return true;
         } else if (direction == "Back" || direction == "back" || direction == "s") {
-            xlocationfeet = xlocationfeet - 10;
+            xLocationFeet = xLocationFeet - 10;
             return true;
         } else {
             System.out.println("Invalid direction.");
@@ -64,37 +83,51 @@ public class Umbrella implements Contract {
         }
     }
 
-    // puts umbrella above head, takes in person height and x location
+    /**
+     * method that puts umbrella above someone's head by changing xLocationFeet and yLocationFeet
+     * @param x location of person
+     * @param y height of person
+     */
     public boolean fly(int x, int y) {
         if (y < 0) {
-            ylocationfeet = y; // where y is the height of person (so we know how high the umbrella is)
-            xlocationfeet = x;
+            yLocationFeet = y;
+            xLocationFeet = x;
             return true;
         } else {
             return false;
         }
     }
 
-    // closes umbrella
+    /**
+     * method that closes umbrella by changing size and whether or not it's open
+     * @return the size of the umbrella
+     */
     public Number shrink() {
         size = 0;
         open = false;
         return size;
     }
 
-    // opens umbrella
+/**
+     * method that grows umbrella when used by changing size and whether or not it's open
+     * @return the size of umbrella
+     */
     public Number grow() {
         size = 10;
         open = true;
         return size;
     }
 
-    // dries umbrella
+    /**
+     * method that dries umbrella
+     */
     public void rest() {
-        stillwet = false;
+        stillWet = false;
     }
 
-    // closes or opens umbrella
+     /**
+     * method that opens or closes umbrella depending on current state (undoing the act of opening or closing it)
+     */
     public void undo() {
         if (open == true) {
             open = false;
