@@ -69,6 +69,7 @@ public class Umbrella implements Contract {
     /**
      * method that changes umbrella xLocationFeet to simulate walking movement
      * @param direction the direction that the umbrella is moving in
+     * @return boolean based on whether or not xLocationFeet was changed
      */
     public boolean walk(String direction) {
         if (direction == "forward" || direction == "Forward" || direction == "w") {
