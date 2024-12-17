@@ -10,7 +10,7 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 ## Assignment Points:
 
-_____ 10 pts: The class meaningfully implements each of the methods in described in the `Contract` interface:
+YES 10 pts: The class meaningfully implements each of the methods in described in the `Contract` interface:
 
       YES `void grab(String item);`
       YES `String drop(String item);`
@@ -28,11 +28,11 @@ _____ 10 pts: The class meaningfully implements each of the methods in described
 
 YES 4 pts: Programs compile without errors or warnings
 
-MAYBE 2 pts: Executes fully & consistently without crashing (exception/freeze)
+YES 2 pts: Executes fully & consistently without crashing (exception/freeze)
 
-MAYBE 2 pt: Complies with style guidelines (missing items 1 pt each):
+YES 2 pt: Complies with style guidelines (missing items 1 pt each):
 
-      NO Classes & class members all have Javadoc header comments
+      YES Classes & class members all have Javadoc header comments
 
       YES Clear and consistent indentation of bracketed sections
 
