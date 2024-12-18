@@ -1,10 +1,10 @@
 public class Umbrella implements Contract {
 
-    public Number size;
-    public int xLocationFeet;
-    public int yLocationFeet;
-    public boolean stillWet;
-    public boolean open;
+    private Number size;
+    private int xLocationFeet;
+    private int yLocationFeet;
+    private boolean stillWet;
+    private boolean open;
 
     /**
      * constructor for  umbrella 
@@ -21,6 +21,46 @@ public class Umbrella implements Contract {
         this.stillWet = stillWet;
         this.open = open;
         System.out.println("New umbrella created!");
+    }
+
+    /**
+     * accessor for x location in feet
+     * @return xlocationfeet
+     */
+    public int getXLocationFeet() {
+        return xLocationFeet;
+    }
+
+    /**
+     * accessor for x location in feet
+     * @return xlocationfeet
+     */
+    public int getYLocationFeet() {
+        return yLocationFeet;
+    }
+
+    /**
+     * accessor for size
+     * @return size
+     */
+    public Number getSize() {
+        return size;
+    }
+
+    /**
+     * accessor for still wet boolean
+     * @return stillWet boolean
+     */
+    public boolean getStillWet() {
+        return stillWet;
+    }
+
+    /**
+     * accessor for open boolean
+     * @return open boolean
+     */
+    public boolean getOpen() {
+        return open;
     }
 
     /**
