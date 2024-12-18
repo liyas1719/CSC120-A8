@@ -139,4 +139,22 @@ public class Umbrella implements Contract {
         }
     }
 
+    /**
+     * main methid that creates new umbrella and runs all methods
+     * @param args
+     */
+    public static void main(String[] args) {
+        Umbrella myUmbrella = new Umbrella(0,0,0,false,false);
+        myUmbrella.fly(0, 6);
+        myUmbrella.rest();
+        myUmbrella.grab("myUmbrella");
+        myUmbrella.drop("myUmbrella");
+        myUmbrella.examine("myUmbrella");
+        myUmbrella.use("myUmbrella");
+        myUmbrella.walk("forward");
+        myUmbrella.shrink();
+        myUmbrella.grow();
+        myUmbrella.undo();
+    }
+
 }
